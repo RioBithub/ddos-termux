@@ -1,0 +1,22 @@
+#!/data/data/com.termux/files/usr/bin/sh
+set -e -u
+
+show_help() {
+	echo 'Usage: ddos attack [webtarget]'
+        echo 'Script by First Step and OneEvolution'
+        echo 'Command : attack,help,ping'
+        echo 'Make sure you have installed python2'
+	exit 1
+}
+
+if [ $# = 0 ]; then show_help; fi
+CMD="$1"
+shift 1
+
+case "$CMD" in
+        attack*) cd /data/data/com.termux/files/usr/bin && python2 ddoser $@;;
+	help*) show_help;;
+        ping*) ping;;
+	*) echo "Unknown command: '$CMD' (run 'ddos help' for usage information)";;
+esac
+
