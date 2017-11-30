@@ -12,7 +12,7 @@ show_help() {
         echo '======================================='
 	echo 'Usage: ddos attack [webtarget]'
         echo 'Script by OneEvolution'
-        echo 'Support: First step,Team cyber traffic'
+        echo 'Support: (ALL TEAM CYBER)'
         echo 'Command : attack,help,upgrade,ping'
         echo 'attack = ddos attack (target)'
         echo 'upgrade = ddos upgrade'
