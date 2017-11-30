@@ -2,10 +2,13 @@
 set -e -u
 
 show_help() {
+        echo '======================================='
 	echo 'Usage: ddos attack [webtarget]'
-        echo 'Script by First Step and OneEvolution'
+        echo 'Script by OneEvolution'
+        echo 'Support: First step,Team cyber traffic'
         echo 'Command : attack,help,ping'
         echo 'Make sure you have installed python2'
+        echo '======================================='
 	exit 1
 }
 
