@@ -12,13 +12,13 @@ show_help() {
         echo '======================================='
 	echo 'Usage: ddos attack [webtarget]'
         echo 'Script by OneEvolution'
-        echo 'Support: (ALL TEAM CYBER)'
+        echo 'Support: (First step,Team cyber traffic)'
         echo 'Command : attack,help,upgrade,ping'
         echo 'attack = ddos attack (target)'
         echo 'upgrade = ddos upgrade'
-        echo 'download = ddos download'
+        echo 'change name = ddos cn (name) [Once only,after upgrade name is normal again'
         echo '-v for check version'
-        echo 'brutal = ddos brutal [ip target]'
+        echo '(!)brutal = ddos brutal [ip target]'
         echo 'ping = ddos ping (target)'
         echo 'Make sure you have installed python2'
         echo '======================================='
@@ -30,10 +30,10 @@ CMD="$1"
 shift 1
 
 case "$CMD" in
+        cn*) cd /data/data/com.termux/files/usr/bin && mv ddos $@;;
         attack*) cd /data/data/com.termux/files/usr/bin && python2 ddoser $@;;
         brutal*) echo This feature is in work,support us;;
 	help*) show_help;;
-        download*) pkg install wget -y && cd /sdcard/Download && wget http://theywillkillyou.com/wp-content/uploads/2016/07/maxresdefault-3.jpg && mv maxresdefault-3.jpg bokep.jpg;;
         -v*) cd /data/data/com.termux/files/usr/bin && cat version;;
         ping*) ping $@;;
         upgrade*) cd $HOME && mkdir upgrade && cd upgrade && git clone https://github.com/RioBithub/ddos-termux && cd ddos-termux && cd source && cp * /data/data/com.termux/files/usr/bin && cd /data/data/com.termux/files/usr/bin && chmod 777 * && echo '------' && echo success upgrade ddos-termux && echo '------' && cd $HOME && rm -rf upgrade;;
