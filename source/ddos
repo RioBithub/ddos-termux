@@ -32,7 +32,7 @@ shift 1
 case "$CMD" in
         cn*) cd /data/data/com.termux/files/usr/bin && mv ddos $@;;
         attack*) cd /data/data/com.termux/files/usr/bin && python2 ddoser $@;;
-        brutal*) cd /data/data/com.termux/files/usr/bin && python3 ddosbrute $@;;
+        brutal*) cd /data/data/com.termux/files/usr/bin && python3 ddosbrute -s $@;;
 	help*) show_help;;
         -v*) cd /data/data/com.termux/files/usr/bin && cat version;;
         ping*) ping $@;;
