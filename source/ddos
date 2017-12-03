@@ -1,0 +1,42 @@
+#!/data/data/com.termux/files/usr/bin/sh
+
+start() {
+    echo '==================================='
+    echo 'One Evolution DDOS'
+    echo '//"ddos help" for command//'
+    echo '==================================='
+    exit 1
+}
+
+show_help() {
+        echo '======================================='
+	echo 'Usage: ddos attack [webtarget]'
+        echo 'Script by OneEvolution'
+        echo 'Support: (First step,Team cyber traffic)'
+        echo 'Command : attack,help,upgrade,ping'
+        echo 'attack = ddos attack (target)'
+        echo 'upgrade = ddos upgrade'
+        echo 'change name = ddos cn (name) [Once only,after upgrade name is normal again'
+        echo '-v for check version'
+        echo 'brutal = ddos brutal [ip target]'
+        echo 'ping = ddos ping (target)'
+        echo 'Make sure you have installed python2'
+        echo '======================================='
+	exit 1
+}
+
+if [ $# = 0 ]; then start; fi
+CMD="$1"
+shift 1
+
+case "$CMD" in
+        cn*) cd /data/data/com.termux/files/usr/bin && mv ddos $@;;
+        attack*) cd /data/data/com.termux/files/usr/bin && python2 ddoser $@;;
+        brutal*) cd /data/data/com.termux/files/usr/bin && python3 ddosbrute $@;;
+	help*) show_help;;
+        -v*) cd /data/data/com.termux/files/usr/bin && cat version;;
+        ping*) ping $@;;
+        upgrade*) cd $HOME && mkdir upgrade && cd upgrade && git clone https://github.com/RioBithub/ddos-termux && cd ddos-termux && cd source && cp * /data/data/com.termux/files/usr/bin && cd /data/data/com.termux/files/usr/bin && chmod 777 * && echo '------' && echo success upgrade ddos-termux && echo '------' && cd $HOME && rm -rf upgrade;;
+	*) echo "Unknown command: '$CMD' (run 'ddos help' for usage information)";;
+esac
+
