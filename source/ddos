@@ -1,6 +1,7 @@
 #!/data/data/com.termux/files/usr/bin/sh
 
 start() {
+    clear
     echo '==================================='
     echo 'One Evolution DDOS'
     echo '//"ddos help" for command//'
@@ -9,6 +10,7 @@ start() {
 }
 
 show_help() {
+        clear
         echo '======================================='
 	echo 'Usage: ddos attack [webtarget]'
         echo 'Script by OneEvolution'
@@ -30,13 +32,13 @@ CMD="$1"
 shift 1
 
 case "$CMD" in
-        cn*) cd /data/data/com.termux/files/usr/bin && mv ddos $@;;
-        attack*) cd /data/data/com.termux/files/usr/bin && python2 ddoser $@;;
-        brutal*) cd /data/data/com.termux/files/usr/bin && python3 ddosbrute -s $@;;
-	help*) show_help;;
-        -v*) cd /data/data/com.termux/files/usr/bin && cat version;;
-        ping*) ping $@;;
-        upgrade*) cd $HOME && mkdir upgrade && cd upgrade && git clone https://github.com/RioBithub/ddos-termux && cd ddos-termux && cd source && cp * /data/data/com.termux/files/usr/bin && cd /data/data/com.termux/files/usr/bin && chmod 777 * && echo '------' && echo success upgrade ddos-termux && echo '------' && cd $HOME && rm -rf upgrade;;
-	*) echo "Unknown command: '$CMD' (run 'ddos help' for usage information)";;
+        cn*) clear && cd /data/data/com.termux/files/usr/bin && mv ddos $@;;
+        attack*) clear && cd /data/data/com.termux/files/usr/bin && python2 ddoser $@;;
+        brutal*) clear && cd /data/data/com.termux/files/usr/bin && python3 ddosbrute -s $@;;
+	help*) clear && show_help;;
+        -v*) clear && cd /data/data/com.termux/files/usr/bin && cat version;;
+        ping*) clear && ping $@;;
+        upgrade*) clear && cd $HOME && mkdir upgrade && cd upgrade && git clone https://github.com/RioBithub/ddos-termux && cd ddos-termux && cd source && cp * /data/data/com.termux/files/usr/bin && cd /data/data/com.termux/files/usr/bin && chmod 777 * && echo '------' && echo success upgrade ddos-termux && echo '------' && cd $HOME && rm -rf upgrade;;
+	*) clear && echo "Unknown command: '$CMD' (run 'ddos help' for usage information)";;
 esac
 
